@@ -1,23 +1,17 @@
 module.exports = {
+  global: {},
+  server: {},
   middleware: {
     // RATE-LIMIT
-    rateLimit: {
-      windowMs: 5 * 60 * 1000,
-      max: 1000
-    },
+    rateLimit: {},
     // CORS
-    cors: {
-      // config
-    },
+    cors: {},
     // ROUTER
-    router: {
-      baseUrl: '/',
-      routesPath: '/routes',
-      apiDocs: {
-        title: 'API-docs'
-      }
-    },
+    router: {},
+    // MODULE-ALIAS
+    moduleAlias: {},
     // EXTEND
     extend: []
-  }
+  },
+  start({ config, express, app, server }) {}
 }

@@ -7,6 +7,8 @@ Copy ".env.example" -> ".env" and add your private key to JWT_SECRET_KEY etc.
 > Note: Don't forget to set up your database for the next step!
 
 ```sh
+npx install && npm install -g nodemon
+
 npx sequelize db:migrate
 npx sequelize db:seed:all
 ```
@@ -31,7 +33,7 @@ npx sequelize db:seed:all
 ```javascript
 module.exports = {
   global: {
-    test: 123
+    $test: 123
   },
   server: {
     multiProcessing: false, // default
@@ -39,7 +41,7 @@ module.exports = {
   },
   // Add your module aliases so they are always at hand
   moduleAlias: {
-    '@utils': __dirname + '/utils'
+    '@some-folder': __dirname + '/directory/some-folder'
   },
   middleware: {
     rateLimit: {
@@ -47,6 +49,9 @@ module.exports = {
       max: 1000 // default
     },
     cors: {}, // default
+    validator: {
+      locale: 'en' // default: en || ru
+    },
     router: {
       baseUrl: '/', // default
       routesPath: '/routes', // default
@@ -59,8 +64,8 @@ module.exports = {
   }
   start({ config, express, app, server }) {
     // Will be executed when the application starts
-    
-    console.log('Hello!', test) // Hello 123
+
+    console.log('Hello!', $test) // Hello 123
   }
 }
 

@@ -5,6 +5,7 @@ module.exports = {
   middleware: {
     rateLimit: {},
     cors: {},
+    validator: {},
     router: {},
     extend: () => []
   },

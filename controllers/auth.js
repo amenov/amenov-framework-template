@@ -45,11 +45,11 @@ exports.signIn = async (req, res) => {
     return res.status(401).json()
   }
 
-  const access_token = jwt.sign(
+  const accessToken = jwt.sign(
     { userId: user.id },
     process.env.JWT_SECRET_KEY,
     { expiresIn: process.env.JWT_EXPIRES_IN }
   )
 
-  return res.json({ access_token })
+  return res.json({ accessToken })
 }

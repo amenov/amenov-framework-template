@@ -1,18 +1,18 @@
 require('dotenv').config()
 
-const getValueEnv = (envKey, defaultValue) => {
+const env = (envKey, defaultValue) => {
   return process.env[envKey] ?? defaultValue ?? null
 }
 
 const getConnectionConfig = (mode) => ({
   [mode]: {
-    dialect: getValueEnv('DB_DIALECT', 'mysql'),
-    host: getValueEnv('DB_HOST', '127.0.0.1'),
-    port: getValueEnv('DB_PORT', '3306'),
-    database: getValueEnv('DB_NAME', 'database_' + mode),
-    username: getValueEnv('DB_USERNAME', 'root'),
-    password: getValueEnv('DB_PASSWORD', 'password_' + mode),
-    logging: eval(getValueEnv('DB_LOGGING', true))
+    dialect: env('DB_DIALECT', 'mysql'),
+    host: env('DB_HOST', '127.0.0.1'),
+    port: env('DB_PORT', '3306'),
+    database: env('DB_NAME', 'database_' + mode),
+    username: env('DB_USERNAME', 'root'),
+    password: env('DB_PASSWORD', 'password_' + mode),
+    logging: eval(env('DB_LOGGING', true))
   }
 })
 

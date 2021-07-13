@@ -1,6 +1,6 @@
 const docs = require('@docs/auth')
 
-const endpoint = controller('auth')
+const endpoint = $controller('auth')
 
 module.exports = {
   group: 'Auth',

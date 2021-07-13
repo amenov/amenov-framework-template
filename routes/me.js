@@ -1,6 +1,6 @@
 const docs = require('@docs/me')
 
-const endpoint = controller('me')
+const endpoint = $controller('me')
 
 module.exports = {
   group: 'Me',
